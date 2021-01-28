@@ -24,6 +24,9 @@ rspec spec
 ### URL Validation:
 - Currently using a ruby built-in library to validate that the long urls users input are correct.  With more time, I would add a little more validation on the input urls with something along the lines of running a quick scrape of that URL to make sure it returns an http status of :ok/200
 
+### IP Address Validation:
+- Depending on the way the application is deployed, the way I'm logging the ip address (request.remote_ip) might not return the initial IP the request was made from.  I.e., certain types of load balancers might just return the IP from the load balancer instead of the initial request IP, or if you're using something like Cloudflare or another proxy server you might end up with the proxy IP instead.  With more time I would add more scenarios to this to make sure I'm getting the proper orginating IP address from whoever clicks the URL.
+
 ### Testing:
 - Would add a few more tests, including tests to make sure the regex for the tiny url is correct
 
