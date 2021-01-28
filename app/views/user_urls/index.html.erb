@@ -1,0 +1,19 @@
+<h1>All Urls</h1>
+
+<%= link_to "Click to Create A New Tiny URL!", new_user_url_path %>
+
+</br>
+</br>
+
+<table>
+  <tr>
+    <th>Url</th>
+    <th>Actions</th>
+  </tr>
+  <% @urls.each do |url| %>
+    <tr>
+      <td><%= link_to url.short_url, user_url_path(url) %></td>
+      <td><%= link_to "View Url Statistics", user_url_url_statistics_path(url) %></td>
+    </tr>
+  <% end %>
+</table>

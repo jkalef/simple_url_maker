@@ -1,0 +1,24 @@
+<%= link_to "View All URLs", user_urls_path %>
+
+<h2>Showing Statistics for <%= @url.short_url %></h2>
+
+<p>Long Url: <%= @url.long_url %></p>
+<p>Short Url: <%= @url.short_url %></p>
+
+<div>
+  <p>IP Addresses Accessing This URL:</p>
+  <table>
+    <tr>
+      <th>Ip Address</th>
+      <th>Time Accessed</th>
+    </tr>
+  
+    <% @statistics.each do |statistic| %>
+      <tr>
+        <td><%= statistic.visit_ip_address %></td>
+        <td><%= statistic.created_at.strftime("%B %d, %Y") %></td>
+      </tr>
+    <% end %>
+    
+  </table>
+</div>

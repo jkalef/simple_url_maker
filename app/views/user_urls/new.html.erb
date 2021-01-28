@@ -1,0 +1,15 @@
+<h1>Create A New Url</h1>
+
+<% if @url.errors.any? %>
+  <% @url.errors.full_messages.each do |message|%>
+     <p><%= message %> </p>
+  <%end%>
+<%end%>
+
+</br>
+
+<%= form_for @url do |form| %>
+  <p>Please input a url you want to shorten.  Follow the pattern of: "https://my_url"
+  <p><%= form.text_field :long_url %></p>
+  <%= form.submit %>
+<% end %>
