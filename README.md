@@ -9,7 +9,7 @@ Make sure you have a version of postgres installed and running on your local mac
 ## Getting Started
 - install dependencies `bundle install`
 - Create and migrate your db `rake db:create db:migrate`
-- start server `rails s` (will start on 3000. Use -p option to specify a different part)
+- start server `rails s` (will start on 3000. Use -p option to specify a different port)
 - rails c opens a developer console
 - navigate to `http://localhost:3000` to use 
 
